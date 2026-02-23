@@ -59,25 +59,36 @@ PLANORA/
 
 ## Prerequisites
 
-- **Node.js** >= 18
-- **npm** >= 9
+- **Node.js** >= 18 (developed with v22.9.0)
+- **npm** >= 9 (developed with v10.8.3)
+- **React** 18.3.1 (installed via npm)
+- **Vite** 5.4.x (installed via npm)
 - A **Google Gemini AI** API key ([Get one here](https://aistudio.google.com/apikey))
 - A **Geoapify** API key ([Get one here](https://myprojects.geoapify.com/register))
 
 ## Setup & Installation
 
-1. **Clone the repository**
+1. **Install Node.js**
+
+   Download and install Node.js (v18 or higher) from [https://nodejs.org/](https://nodejs.org/).
+   Verify the installation:
    ```bash
-   git clone 
+   node -v    # should show v18.x.x or higher
+   npm -v     # should show 9.x.x or higher
+   ```
+
+2. **Clone the repository**
+   ```bash
+   git clone https://github.com/manish050994/PLANORA.git
    cd PLANORA
    ```
 
-2. **Install dependencies**
+3. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Create environment file**
+4. **Create environment file**
 
    Create a `.env.local` file in the project root:
    ```env
@@ -85,12 +96,12 @@ PLANORA/
    VITE_GEOAPIFY_API_KEY=your_geoapify_api_key_here
    ```
 
-4. **Run the development server**
+5. **Run the development server**
    ```bash
    npm run dev
    ```
 
-5. **Open in browser**
+6. **Open in browser**
 
    Visit [http://localhost:5173](http://localhost:5173)
 
