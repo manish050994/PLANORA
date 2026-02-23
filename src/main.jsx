@@ -3,34 +3,37 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import CreateTrip from "./create-trip/index.jsx";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import Header from "./components/ui/custom/Header.jsx";
-//import { Toaster } from "@/components/ui/sonner";
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <App />,
-//   },
-//   {
-//     path: "create-trip",
-//     element: <CreateTrip />,
-//   },
-// ]);
+import { Toaster } from "sonner";
+
+function Layout() {
+  return (
+    <>
+      <Header />
+      <Outlet />
+      <Toaster />
+    </>
+  );
+}
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Header />
-    {/* <RouterProvider router={router} basename="/PLANORA" /> */}
     <RouterProvider
       router={createBrowserRouter(
         [
           {
-            path: "/",
-            element: <App />,
-          },
-          {
-            path: "create-trip",
-            element: <CreateTrip />,
+            element: <Layout />,
+            children: [
+              {
+                path: "/",
+                element: <App />,
+              },
+              {
+                path: "create-trip",
+                element: <CreateTrip />,
+              },
+            ],
           },
         ],
         { basename: import.meta.env.BASE_URL }
