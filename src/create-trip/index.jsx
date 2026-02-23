@@ -73,7 +73,7 @@ function CreateTrip() {
             What is your destination 🌎
           </h2>
           <div className="">
-            <GeoapifyContext apiKey="71ded9e31d664e36b4427f24e93edc48">
+            <GeoapifyContext apiKey={import.meta.env.VITE_GEOAPIFY_API_KEY}>
               <GeoapifyGeocoderAutocomplete
                 placeholder="Enter address here" // Placeholder for the geocoder input
                 placeSelect={(value) => handlePlaceSelect(value)} // Handle the selected place
